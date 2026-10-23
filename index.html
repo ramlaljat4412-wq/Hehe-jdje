@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHISH WORKSHOP - घर बैठे राइटिंग का काम</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            background-image: radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.2), transparent 30%),
+                              radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.2), transparent 30%);
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .input-field {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            background: rgba(15, 23, 42, 0.9);
+            border-color: #a855f7; /* purple-500 */
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+            outline: none;
+        }
+
+        /* Custom Radio Button Card Styling */
+        .radio-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .radio-input:checked + .radio-content {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: #a855f7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+        }
+
+        .radio-input:checked + .radio-content .radio-circle-inner {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .radio-input:checked + .radio-content .radio-circle-outer {
+            border-color: #a855f7;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="glass-panel sticky top-0 z-50 py-4 px-6 border-b border-white/5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                    <i class="fa-solid fa-pen-nib text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
+                        ASHISH WORKSHOP
+                    </h1>
+                </div>
+            </div>
+            <a href="#apply" class="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all border border-white/10 text-sm font-medium flex items-center gap-2">
+                <i class="fa-solid fa-paper-plane text-purple-300"></i> <span class="hidden sm:inline">अप्लाई करें</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-6xl mx-auto px-6 pt-16 pb-12 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-sm font-medium mb-8 backdrop-blur-sm">
+            <i class="fa-solid fa-house-laptop"></i> 100% घर बैठे काम
+        </div>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            अपनी <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">हैंडराइटिंग</span> से कमाएं, <br class="hidden md:block"/> शानदार वीकली इनकम!
+        </h2>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            हम आपको घर बैठे लिखने का काम प्रदान करते हैं। पेज आपके घर तक भेजे जाएंगे। बिना किसी सिक्योरिटी डिपाजिट के आज ही जुड़ें।
+        </p>
+    </header>
+
+    <!-- Salary Cards Section -->
+    <section class="max-w-6xl mx-auto px-6 mb-20">
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 border border-purple-500/20">
+                    <i class="fa-solid fa-book-open text-purple-400 text-2xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-1">₹18,500</h3>
+                <p class="text-purple-300 text-sm font-medium mb-4 uppercase tracking-wider">Weekly Payment</p>
+                <div class="h-px w-full bg-gradient-to-r from-white/10 to-transparent mb-4"></div>
+                <p class="text-white font-medium text-lg mb-1">100 पेज लिखने पर</p>
+                <p class="text-sm text-gray-400">100 पेज का राइटिंग असाइनमेंट पूरा करें और हर हफ़्ते भुगतान पाएं।</p>
+            </div>
+
+            <!-- Card 2 (Popular) -->
+            <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.1)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-blue-600 text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-lg">POPULAR</div>
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20">
+                    <i class="fa-solid fa-money-check-dollar text-blue-400 text-2xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-1">₹40,000</h3>
+                <p class="text-blue-300 text-sm font-medium mb-4 uppercase tracking-wider">Weekly Payment</p>
+                <div class="h-px w-full bg-gradient-to-r from-white/10 to-transparent mb-4"></div>
+                <p class="text-white font-medium text-lg mb-1">200 पेज लिखने पर</p>
+                <p class="text-sm text-gray-400">अधिक काम, अधिक कमाई। 200 पेज का टारगेट और शानदार साप्ताहिक सैलरी।</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 border border-emerald-500/20">
+                    <i class="fa-solid fa-shield-check text-emerald-400 text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-emerald-400 mt-2">Zero Investment</h3>
+                <p class="text-emerald-300/80 text-sm font-medium mb-4 uppercase tracking-wider">100% Free Joining</p>
+                <div class="h-px w-full bg-gradient-to-r from-white/10 to-transparent mb-4"></div>
+                <p class="text-white font-medium text-lg mb-1">कोई निवेश नहीं</p>
+                <p class="text-sm text-gray-400">रजिस्ट्रेशन और काम पूरी तरह से निःशुल्क है। हम कोई सिक्योरिटी राशि नहीं मांगते।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="apply" class="max-w-4xl mx-auto px-6 mb-24 relative">
+        <!-- Glow Effects Behind Form -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[500px] bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+        <div class="glass-panel rounded-3xl p-6 md:p-10 shadow-2xl border-white/10">
+            <div class="text-center mb-10">
+                <span class="text-purple-400 font-semibold tracking-wider uppercase text-sm mb-2 block">Join Today</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">रजिस्ट्रेशन फॉर्म</h2>
+                <p class="text-gray-400">काम शुरू करने के लिए अपनी सही जानकारी भरें। फॉर्म भरते ही आप हमारे WhatsApp पर जुड़ जाएंगे।</p>
+            </div>
+
+            <form id="applicationForm" class="space-y-8">
+                
+                <!-- Personal Details Section -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white/90 mb-4 flex items-center gap-2 border-b border-white/10 pb-2">
+                        <i class="fa-regular fa-id-card text-purple-400"></i> व्यक्तिगत विवरण
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <!-- Name -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-300 mb-1.5">पूरा नाम (Full Name) *</label>
+                            <div class="relative">
+                                <i class="fa-regular fa-user absolute left-4 top-3.5 text-gray-500"></i>
+                                <input type="text" id="custName" required class="input-field w-full rounded-xl py-3 pl-11 pr-4 text-white placeholder-gray-500" placeholder="अपना पूरा नाम दर्ज करें">
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile 1 -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1.5">मोबाइल नंबर (Mobile No.) *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-phone absolute left-4 top-3.5 text-gray-500"></i>
+                                <input type="tel" id="mobile" pattern="[0-9]{10}" required class="input-field w-full rounded-xl py-3 pl-11 pr-4 text-white placeholder-gray-500" placeholder="10 अंकों का नंबर">
+                            </div>
+                        </div>
+
+                        <!-- Mobile 2 (Alternate) -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1.5">वैकल्पिक नंबर (Alternate No.) *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-phone-flip absolute left-4 top-3.5 text-gray-500"></i>
+                                <input type="tel" id="altMobile" pattern="[0-9]{10}" required class="input-field w-full rounded-xl py-3 pl-11 pr-4 text-white placeholder-gray-500" placeholder="दूसरा 10 अंकों का नंबर">
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-300 mb-1.5">घर का पूरा पता (Full Address) *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-location-dot absolute left-4 top-3.5 text-gray-500"></i>
+                                <textarea id="address" required rows="2" class="input-field w-full rounded-xl py-3 pl-11 pr-4 text-white placeholder-gray-500 resize-none" placeholder="मकान नंबर, गली, मोहल्ला, शहर, जिला, राज्य और पिन कोड"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Selection Section -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white/90 mb-4 flex items-center gap-2 border-b border-white/10 pb-2">
+                        <i class="fa-solid fa-layer-group text-blue-400"></i> काम (पैकेज) का चुनाव *
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Package 1 -->
+                        <label class="radio-card relative block">
+                            <input type="radio" name="packageOption" value="100 Pages - ₹18500" class="radio-input peer sr-only" required>
+                            <div class="radio-content h-full rounded-xl border border-white/10 bg-white/5 p-4 flex gap-4 items-center">
+                                <div class="radio-circle-outer w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center flex-shrink-0 transition-colors">
+                                    <div class="radio-circle-inner w-2.5 h-2.5 rounded-full bg-purple-400 opacity-0 scale-50 transition-all"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-base">100 पेज का काम</h4>
+                                    <p class="text-sm text-purple-300">₹18,500 / साप्ताहिक</p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Package 2 -->
+                        <label class="radio-card relative block">
+                            <input type="radio" name="packageOption" value="200 Pages - ₹40000" class="radio-input peer sr-only" required>
+                            <div class="radio-content h-full rounded-xl border border-white/10 bg-white/5 p-4 flex gap-4 items-center">
+                                <div class="radio-circle-outer w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center flex-shrink-0 transition-colors">
+                                    <div class="radio-circle-inner w-2.5 h-2.5 rounded-full bg-purple-400 opacity-0 scale-50 transition-all"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-base">200 पेज का काम</h4>
+                                    <p class="text-sm text-blue-300">₹40,000 / साप्ताहिक</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Delivery Option Section -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white/90 mb-4 flex items-center gap-2 border-b border-white/10 pb-2">
+                        <i class="fa-solid fa-truck text-pink-400"></i> नोटबुक प्राप्ति का माध्यम *
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Option 1: Office Pickup -->
+                        <label class="radio-card relative block">
+                            <input type="radio" name="deliveryOption" value="Company Office (Free)" class="radio-input peer sr-only" required onchange="toggleWarning()">
+                            <div class="radio-content h-full rounded-xl border border-white/10 bg-white/5 p-4 flex gap-4 items-start">
+                                <div class="radio-circle-outer w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center mt-0.5 flex-shrink-0 transition-colors">
+                                    <div class="radio-circle-inner w-2.5 h-2.5 rounded-full bg-purple-400 opacity-0 scale-50 transition-all"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1">कंपनी ऑफिस आकर लें</h4>
+                                    <p class="text-sm text-gray-400 text-balance">(उदयपुर, राजस्थान) - <span class="text-emerald-400 font-medium">मुफ़्त (Free)</span></p>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Option 2: Home Delivery -->
+                        <label class="radio-card relative block">
+                            <input type="radio" name="deliveryOption" value="Home Delivery (₹200 Fee)" class="radio-input peer sr-only" required onchange="toggleWarning()">
+                            <div class="radio-content h-full rounded-xl border border-white/10 bg-white/5 p-4 flex gap-4 items-start">
+                                <div class="radio-circle-outer w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center mt-0.5 flex-shrink-0 transition-colors">
+                                    <div class="radio-circle-inner w-2.5 h-2.5 rounded-full bg-purple-400 opacity-0 scale-50 transition-all"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-1">घर पर डिलीवरी (Home Delivery)</h4>
+                                    <p class="text-sm text-gray-400 text-balance">पेज आपके पते पर भेजे जाएंगे।</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Dynamic Warning Box for Home Delivery -->
+                    <div id="deliveryWarning" class="hidden mt-4 bg-gradient-to-r from-orange-500/20 to-red-500/10 border border-orange-500/30 rounded-xl p-4 gap-3 items-start backdrop-blur-md">
+                        <i class="fa-solid fa-circle-exclamation text-orange-400 mt-1 text-lg"></i>
+                        <div>
+                            <h4 class="text-orange-300 font-semibold mb-1">₹200 डिलीवरी शुल्क लागू</h4>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                होम डिलीवरी विकल्प चुनने पर, कूरियर चार्ज के रूप में <strong class="text-white">₹200</strong> का भुगतान करना होगा। यह शुल्क कंपनी की पॉलिसी के अनुसार अनिवार्य है।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full mt-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:shadow-[0_0_30px_rgba(124,58,237,0.6)] transition-all duration-300 flex items-center justify-center gap-3 group transform hover:-translate-y-1 outline-none focus:ring-4 focus:ring-purple-500/50">
+                    <span class="text-lg">Submit & Send to WhatsApp</span>
+                    <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                </button>
+                
+                <p class="text-center text-xs text-gray-500 mt-4 flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-lock text-gray-600"></i> आपकी जानकारी सुरक्षित है और सीधे WhatsApp पर भेजी जाएगी।
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-black/40 py-8 text-center backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-xl font-bold text-white/50 mb-2">ASHISH WORKSHOP</h2>
+            <p class="text-gray-400 text-sm mb-4">
+                &copy; 2024 Ashish Workshop (Udaipur, Rajasthan). All rights reserved.
+            </p>
+            <p class="text-xs text-gray-500 max-w-2xl mx-auto">
+                डिस्क्लेमर: यह वेबसाइट केवल जानकारी और लीड जनरेशन के लिए है। किसी भी तरह के ऑनलाइन फ्रॉड या अतिरिक्त भुगतान से सावधान रहें। कंपनी केवल ₹200 (होम डिलीवरी शुल्क) चार्ज करती है।
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle the warning message for home delivery
+        function toggleWarning() {
+            const deliveryOptions = document.getElementsByName('deliveryOption');
+            const warningBox = document.getElementById('deliveryWarning');
+            let isHomeDelivery = false;
+
+            for (const option of deliveryOptions) {
+                if (option.checked && option.value.includes('Home Delivery')) {
+                    isHomeDelivery = true;
+                    break;
+                }
+            }
+            
+            if (isHomeDelivery) {
+                warningBox.classList.remove('hidden');
+                warningBox.classList.add('flex', 'fade-in');
+            } else {
+                warningBox.classList.add('hidden');
+                warningBox.classList.remove('flex', 'fade-in');
+            }
+        }
+
+        // Handle form submission and redirect to WhatsApp
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent standard page reload
+
+            // Gather all form values
+            const name = document.getElementById('custName').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const altMobile = document.getElementById('altMobile').value.trim();
+            const address = document.getElementById('address').value.trim();
+            
+            // Get selected package
+            let selectedPackage = '';
+            const packageRadios = document.getElementsByName('packageOption');
+            for (const radio of packageRadios) {
+                if (radio.checked) {
+                    selectedPackage = radio.value;
+                    break;
+                }
+            }
+
+            // Get selected delivery option
+            let selectedDelivery = '';
+            const deliveryRadios = document.getElementsByName('deliveryOption');
+            for (const radio of deliveryRadios) {
+                if (radio.checked) {
+                    selectedDelivery = radio.value;
+                    break;
+                }
+            }
+
+            // Format the message for WhatsApp
+            const message = `📄 *नया आवेदन - ASHISH WORKSHOP* 📄\n\n`
+                          + `👤 *नाम:* ${name}\n`
+                          + `📞 *मोबाइल नंबर:* ${mobile}\n`
+                          + `📱 *वैकल्पिक नंबर:* ${altMobile}\n`
+                          + `📍 *पूरा पता:* ${address}\n\n`
+                          + `📚 *चुना गया काम:* ${selectedPackage}\n`
+                          + `🚚 *डिलीवरी का माध्यम:* ${selectedDelivery}\n\n`
+                          + `-----------------------------------\n`
+                          + `*नोट:* कृपया जल्द से जल्द मेरा रजिस्ट्रेशन पूरा करें।`;
+
+            // Encode the message to make it URL safe
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Your WhatsApp Number
+            const whatsappNumber = "918018929965";
+            
+            // Generate WhatsApp Link
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Open WhatsApp in a new tab/window
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
